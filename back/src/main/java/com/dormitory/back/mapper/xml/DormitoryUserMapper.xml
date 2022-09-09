@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.dormitory.back.mapper.DormitoryUserMapper">
+<select id="getAll">
+    SELECT d.nick,g.`name`,d.count_,d.guests_number,d1.description FROM dormitory d left join gradle g
+                                                                                              on d.gradle_id=g.id left join dormitory_host d1
+                                                                                                                            on d.dormitory_host_id=d1.id
+</select>
+</mapper>

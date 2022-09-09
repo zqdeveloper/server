@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.dormitory.back.mapper.DormitoryMapper">
+    <select id="getAll" resultType="map">
+        SELECT d.nick, g.`name`, d.count_, d.guests_number, d1.description FROM dormitory_host d1 left join  dormitory d on d1.id=d.dormitory_host_id
+                                                                                                  left join gradle g on d.gradle_id = g.id  order by d.id limit 800
+    </select>
+</mapper>

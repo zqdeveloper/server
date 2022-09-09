@@ -1,0 +1,20 @@
+server:
+  port: 8092
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.116.218.180:3306/dormitory_manager?serverTimezone=GMT%2B8
+    username: admin
+    password: admin
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/com/dormitory/back/mapper/xml/**/*.xml
